@@ -1,0 +1,3 @@
+LIBRARY MPCRegelung1DOF1Versuch_sfun.mexw64
+EXPORTS
+mexFunction

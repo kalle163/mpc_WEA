@@ -1,0 +1,26 @@
+CC     = "D:\Program Files\MATLAB\R2016a\sys\lcc64\lcc64\bin\lcc64.exe"
+LD     = "D:\Program Files\MATLAB\R2016a\sys\lcc64\lcc64\bin\lcclnk64.exe"
+LIBCMD = "D:\Program Files\MATLAB\R2016a\sys\lcc64\lcc64\bin\lcclib64.exe"
+CFLAGS = -dll -noregistrylookup  -c -Zp8 -DLCC_WIN64 -DMATLAB_MEX_FILE -DMX_COMPAT_32 -nodeclspec 
+LDFLAGS = -s -dll -L"D:\Program Files\MATLAB\R2016a\sys\lcc64\lcc64\lib64" -entry LibMain -map sfun.map 
+LIBFLAGS = 
+
+OBJECTS = \
+	"MPCRegelung1DOF1Versuch_sfun.obj"\
+	"c2_MPCRegelung1DOF1Versuch.obj"\
+	"MPCRegelung1DOF1Versuch_sfun_registry.obj"\
+	"lccstub.obj"\
+
+INCLUDE_PATH= -I"D:\Program Files\MATLAB\R2016a\sys\lcc64\lcc64\include64"  -I"D:\Program Files\MATLAB\R2016a\extern\include"  -I"D:\Program Files\MATLAB\R2016a\simulink\include"  -I"D:\Program Files\MATLAB\R2016a\simulink\include\sf_runtime"  -I"D:\Program Files\MATLAB\R2016a\stateflow\c\mex\include"  -I"D:\Program Files\MATLAB\R2016a\rtw\c\src"  -I"D:\Dropbox\Elektrotechnisches Projekt\Modell_R2016b\slprj\_sfprj\MPCRegelung1DOF1Versuch\_self\sfun\src" 
+ 
+
+MPCRegelung1DOF1Versuch_sfun.mexw64 : $(MAKEFILE) $(OBJECTS)
+	$(LD) $(LDFLAGS) -o MPCRegelung1DOF1Versuch_sfun.mexw64 @MPCRegelung1DOF1Versuch_sfun.lmko
+MPCRegelung1DOF1Versuch_sfun.obj :	"MPCRegelung1DOF1Versuch_sfun.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "MPCRegelung1DOF1Versuch_sfun.c"
+c2_MPCRegelung1DOF1Versuch.obj :	"c2_MPCRegelung1DOF1Versuch.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c2_MPCRegelung1DOF1Versuch.c"
+MPCRegelung1DOF1Versuch_sfun_registry.obj :	"MPCRegelung1DOF1Versuch_sfun_registry.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "MPCRegelung1DOF1Versuch_sfun_registry.c"
+lccstub.obj :	"D:\Program Files\MATLAB\R2016a\sys\lcc64\lcc64\mex\lccstub.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "D:\Program Files\MATLAB\R2016a\sys\lcc64\lcc64\mex\lccstub.c"
