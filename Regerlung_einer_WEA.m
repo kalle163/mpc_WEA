@@ -272,6 +272,79 @@ open_system(sys_1_r);
 sim(sys);
 sim(sys_1_r);
 
+%Darstellung der Ergebnisse
+DataloggingMPC.zeit      = logsout.getElement('4DOFMPCw_r').Values.time; 
+
+
+DataloggingMPC.w_r    = logsout.getElement('4DOFMPCw_r').Values.data;                                         
+DataloggingMPC.v_t    = logsout.getElement('4DOFMPCv_t').Values.data;
+DataloggingMPC.y_t    = logsout.getElement('4DOFMPCy_t').Values.data;
+DataloggingMPC.v_b    = logsout.getElement('4DOFMPCv_b').Values.data;
+DataloggingMPC.y_b    = logsout.getElement('4DOFMPCy_b').Values.data;
+DataloggingBASE.w_r   = logsout.getElement('4DOFBASEw_r').Values.data;
+DataloggingBASE.v_t   = logsout.getElement('4DOFBASEv_t').Values.data;
+DataloggingBASE.y_t   = logsout.getElement('4DOFBASEy_t').Values.data;
+DataloggingBASE.v_b   = logsout.getElement('4DOFBASEv_b').Values.data;
+DataloggingBASE.y_b   = logsout.getElement('4DOFBASEy_b').Values.data;
+
+figure(1)
+subplot(5,1,1)
+
+   plot(DataloggingMPC.zeit, DataloggingMPC.w_r,'r-')
+   hold on 
+   plot(DataloggingMPC.zeit, DataloggingBASE.w_r,'b-')
+   grid on
+   title('Rotorgeschwindigkeit')
+   ylabel('w_r')
+   xlabel('t in s')
+   legend('w_r MPC','w_r BASE')
+  
+subplot(5,1,2)
+
+   plot(DataloggingMPC.zeit, DataloggingMPC.v_t,'r-')
+   hold on 
+   plot(DataloggingMPC.zeit, DataloggingBASE.v_t,'b-')
+   grid on
+   title('Geschwindigkeit der Turmauslenkung')
+   ylabel('v_b in m/s')
+   xlabel('t in s')
+   legend('v_b MPC','v_b BASE')
+   
+subplot(5,1,3)
+
+   plot(DataloggingMPC.zeit, DataloggingMPC.y_t,'r-')
+   hold on 
+   plot(DataloggingMPC.zeit, DataloggingBASE.y_t,'b-')
+   grid on
+   title('Turmauslenkung')
+   ylabel('y_t in m/s')
+   xlabel('t in s')
+   legend('y_t MPC','y_t BASE')
+
+subplot(5,1,4)
+
+   plot(DataloggingMPC.zeit, DataloggingMPC.v_b,'r-')
+   hold on 
+   plot(DataloggingMPC.zeit, DataloggingBASE.v_b,'b-')
+   grid on
+   title('Geschwindigkeit der Blattauslenkung')
+   ylabel('v_b in m/s')
+   xlabel('t in s')
+   legend('v_b MPC','v_b BASE')
+   
+ subplot(5,1,5)
+
+   plot(DataloggingMPC.zeit, DataloggingMPC.y_b,'r-')
+   hold on 
+   plot(DataloggingMPC.zeit, DataloggingBASE.y_b,'b-')
+   grid on
+   title('Blattauslenkung')
+   ylabel('y_b in m/s')
+   xlabel('t in s')
+   legend('y_b MPC','y_b BASE')
+
+
+
 
 
 
