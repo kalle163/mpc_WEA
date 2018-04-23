@@ -24,6 +24,7 @@ extern struct SfDebugInstanceStruct* sfGlobalDebugInstanceStruct;
 
 /* Auxiliary Header Files */
 #include "blas.h"
+#include "lapacke.h"
 
 /* Type Definitions */
 

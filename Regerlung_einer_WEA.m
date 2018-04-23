@@ -88,7 +88,6 @@ AC1 = (1/J)*(0.5*rho*pi*R^4*v_c*CM_dlambda);
 BC1 = [(1/J)*(0.5*rho*R^3*v_c^2*CM_dtheta),(-1/J)*n_g,(1/J)*((-rho*pi*R^4*w_r_c)*CM_dlambda+rho*pi*R^3*v_c*CM)];
 C1 = 1;
 D1 = zeros(1,3);
-
 AD1 =expm(AC1*T_s); 
 I1=eye(1);
 BD1 = inv(AC1)*(expm(AC1*T_s)-I1)*BC1;
@@ -239,12 +238,12 @@ BD2v=BD2(:,3);
 [F2a,H2a,G2a] = GetPredictionMatrizendis(AD2a,BD2ua,BD2va,C2a,100,50);
 C2full=eye(4);
 D2full=zeros(4,3);
-Qw2=eye(100)*0.1;
-Rw2=eye(100);
+Qw2=eye(100);
+Rw2=eye(100)*0.1;
 r2=zeros(1,100);
 %Constraind Case
 DeltaU2min=[-8*pi/180*T_s,-Inf];
-DeltaU2max=[8+pi/180+T_s,Inf];
+DeltaU2max=[8*pi/180*T_s,Inf];
 U2min=[0,0];
 U2max=[90*pi/180,43091.5];
 Y2min=0;

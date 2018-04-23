@@ -7,7 +7,7 @@ LIBFLAGS =
 
 OBJECTS = \
 	"Simulation_der_Regler_sfun.obj"\
-	"c5_Simulation_der_Regler.obj"\
+	"c7_Simulation_der_Regler.obj"\
 	"Simulation_der_Regler_sfun_registry.obj"\
 	"lccstub.obj"\
 
@@ -18,8 +18,8 @@ Simulation_der_Regler_sfun.mexw64 : $(MAKEFILE) $(OBJECTS)
 	$(LD) $(LDFLAGS) -o Simulation_der_Regler_sfun.mexw64 @Simulation_der_Regler_sfun.lmko
 Simulation_der_Regler_sfun.obj :	"Simulation_der_Regler_sfun.c"
 	$(CC) $(CFLAGS) $(INCLUDE_PATH) "Simulation_der_Regler_sfun.c"
-c5_Simulation_der_Regler.obj :	"c5_Simulation_der_Regler.c"
-	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c5_Simulation_der_Regler.c"
+c7_Simulation_der_Regler.obj :	"c7_Simulation_der_Regler.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c7_Simulation_der_Regler.c"
 Simulation_der_Regler_sfun_registry.obj :	"Simulation_der_Regler_sfun_registry.c"
 	$(CC) $(CFLAGS) $(INCLUDE_PATH) "Simulation_der_Regler_sfun_registry.c"
 lccstub.obj :	"D:\Program Files\MATLAB\R2016a\sys\lcc64\lcc64\mex\lccstub.c"

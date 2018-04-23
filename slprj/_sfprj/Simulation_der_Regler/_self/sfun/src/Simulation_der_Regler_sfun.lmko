@@ -1,5 +1,5 @@
 "Simulation_der_Regler_sfun.obj"
-"c5_Simulation_der_Regler.obj"
+"c7_Simulation_der_Regler.obj"
 "Simulation_der_Regler_sfun_registry.obj"
 "lccstub.obj"
 "Simulation_der_Regler_sfun.def"
@@ -18,3 +18,5 @@
 -LD:\PROGRA~2\MATLAB\R2016a\extern\lib\win64\microsoft
 D:\PROGRA~2\MATLAB\R2016a\extern\lib\win64\microsoft\libmwblas.lib
 D:\PROGRA~2\MATLAB\R2016a\extern\lib\win64\microsoft\libmwblas.lib
+D:\PROGRA~2\MATLAB\R2016a\extern\lib\win64\microsoft\libmwlapack.lib
+D:\PROGRA~2\MATLAB\R2016a\extern\lib\win64\microsoft\libmwlapack.lib

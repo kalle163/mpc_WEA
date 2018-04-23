@@ -2,7 +2,7 @@
 
 #include "Simulation_der_Regler_sfun.h"
 #include "Simulation_der_Regler_sfun_debug_macros.h"
-#include "c5_Simulation_der_Regler.h"
+#include "c7_Simulation_der_Regler.h"
 
 /* Type Definitions */
 
@@ -28,8 +28,8 @@ void Simulation_der_Regler_terminator(void)
 unsigned int sf_Simulation_der_Regler_method_dispatcher(SimStruct *simstructPtr,
   unsigned int chartFileNumber, const char* specsCksum, int_T method, void *data)
 {
-  if (chartFileNumber==5) {
-    c5_Simulation_der_Regler_method_dispatcher(simstructPtr, method, data);
+  if (chartFileNumber==7) {
+    c7_Simulation_der_Regler_method_dispatcher(simstructPtr, method, data);
     return 1;
   }
 
@@ -69,10 +69,10 @@ unsigned int sf_Simulation_der_Regler_process_check_sum_call( int nlhs, mxArray 
       unsigned int chartFileNumber;
       chartFileNumber = (unsigned int)mxGetScalar(prhs[2]);
       switch (chartFileNumber) {
-       case 5:
+       case 7:
         {
-          extern void sf_c5_Simulation_der_Regler_get_check_sum(mxArray *plhs[]);
-          sf_c5_Simulation_der_Regler_get_check_sum(plhs);
+          extern void sf_c7_Simulation_der_Regler_get_check_sum(mxArray *plhs[]);
+          sf_c7_Simulation_der_Regler_get_check_sum(plhs);
           break;
         }
 
@@ -130,12 +130,12 @@ unsigned int sf_Simulation_der_Regler_autoinheritance_info( int nlhs, mxArray *
     unsigned int chartFileNumber;
     chartFileNumber = (unsigned int)mxGetScalar(prhs[1]);
     switch (chartFileNumber) {
-     case 5:
+     case 7:
       {
-        if (strcmp(aiChksum, "IXRkucEPuUIsOXE0DEoGQ") == 0) {
-          extern mxArray *sf_c5_Simulation_der_Regler_get_autoinheritance_info
+        if (strcmp(aiChksum, "boBxpStlCScZWFrwgi1nqC") == 0) {
+          extern mxArray *sf_c7_Simulation_der_Regler_get_autoinheritance_info
             (void);
-          plhs[0] = sf_c5_Simulation_der_Regler_get_autoinheritance_info();
+          plhs[0] = sf_c7_Simulation_der_Regler_get_autoinheritance_info();
           break;
         }
 
@@ -178,12 +178,12 @@ unsigned int sf_Simulation_der_Regler_get_eml_resolved_functions_info( int nlhs,
     unsigned int chartFileNumber;
     chartFileNumber = (unsigned int)mxGetScalar(prhs[1]);
     switch (chartFileNumber) {
-     case 5:
+     case 7:
       {
         extern const mxArray
-          *sf_c5_Simulation_der_Regler_get_eml_resolved_functions_info(void);
+          *sf_c7_Simulation_der_Regler_get_eml_resolved_functions_info(void);
         mxArray *persistentMxArray = (mxArray *)
-          sf_c5_Simulation_der_Regler_get_eml_resolved_functions_info();
+          sf_c7_Simulation_der_Regler_get_eml_resolved_functions_info();
         plhs[0] = mxDuplicateArray(persistentMxArray);
         mxDestroyArray(persistentMxArray);
         break;
@@ -224,11 +224,11 @@ unsigned int sf_Simulation_der_Regler_third_party_uses_info( int nlhs, mxArray *
     unsigned int chartFileNumber;
     chartFileNumber = (unsigned int)mxGetScalar(prhs[1]);
     switch (chartFileNumber) {
-     case 5:
+     case 7:
       {
-        if (strcmp(tpChksum, "slpp76p6kmOyqxTOHWV4ArB") == 0) {
-          extern mxArray *sf_c5_Simulation_der_Regler_third_party_uses_info(void);
-          plhs[0] = sf_c5_Simulation_der_Regler_third_party_uses_info();
+        if (strcmp(tpChksum, "snBG5hBDjAkxTQODAkW2A1C") == 0) {
+          extern mxArray *sf_c7_Simulation_der_Regler_third_party_uses_info(void);
+          plhs[0] = sf_c7_Simulation_der_Regler_third_party_uses_info();
           break;
         }
       }
@@ -261,11 +261,11 @@ unsigned int sf_Simulation_der_Regler_jit_fallback_info( int nlhs, mxArray *
     unsigned int chartFileNumber;
     chartFileNumber = (unsigned int)mxGetScalar(prhs[1]);
     switch (chartFileNumber) {
-     case 5:
+     case 7:
       {
-        if (strcmp(tpChksum, "slpp76p6kmOyqxTOHWV4ArB") == 0) {
-          extern mxArray *sf_c5_Simulation_der_Regler_jit_fallback_info(void);
-          plhs[0] = sf_c5_Simulation_der_Regler_jit_fallback_info();
+        if (strcmp(tpChksum, "snBG5hBDjAkxTQODAkW2A1C") == 0) {
+          extern mxArray *sf_c7_Simulation_der_Regler_jit_fallback_info(void);
+          plhs[0] = sf_c7_Simulation_der_Regler_jit_fallback_info();
           break;
         }
       }
@@ -298,12 +298,12 @@ unsigned int sf_Simulation_der_Regler_updateBuildInfo_args_info( int nlhs,
     unsigned int chartFileNumber;
     chartFileNumber = (unsigned int)mxGetScalar(prhs[1]);
     switch (chartFileNumber) {
-     case 5:
+     case 7:
       {
-        if (strcmp(tpChksum, "slpp76p6kmOyqxTOHWV4ArB") == 0) {
-          extern mxArray *sf_c5_Simulation_der_Regler_updateBuildInfo_args_info
+        if (strcmp(tpChksum, "snBG5hBDjAkxTQODAkW2A1C") == 0) {
+          extern mxArray *sf_c7_Simulation_der_Regler_updateBuildInfo_args_info
             (void);
-          plhs[0] = sf_c5_Simulation_der_Regler_updateBuildInfo_args_info();
+          plhs[0] = sf_c7_Simulation_der_Regler_updateBuildInfo_args_info();
           break;
         }
       }
@@ -320,7 +320,7 @@ void Simulation_der_Regler_debug_initialize(struct SfDebugInstanceStruct*
   debugInstance)
 {
   _Simulation_der_ReglerMachineNumber_ = sf_debug_initialize_machine
-    (debugInstance,"Simulation_der_Regler","sfun",0,5,0,0,0);
+    (debugInstance,"Simulation_der_Regler","sfun",0,6,0,0,0);
   sf_debug_set_machine_event_thresholds(debugInstance,
     _Simulation_der_ReglerMachineNumber_,0,0);
   sf_debug_set_machine_data_thresholds(debugInstance,
